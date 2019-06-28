@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode right = KeyCode.D;
     public KeyCode jump = KeyCode.W;
     public float speed = 1;
-    public float jumpspeed = 5;
+    public float jumpspeed = 9;
     Rigidbody rb;
     public Vector3 respawn;
 
