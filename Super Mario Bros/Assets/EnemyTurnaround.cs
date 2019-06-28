@@ -8,7 +8,7 @@ public class EnemyTurnaround : MonoBehaviour
     {
         if(other.GetComponent<EnemyAI>())
         {
-            other.GetComponent<EnemyAI>().speed *= 1;
+            other.GetComponent<EnemyAI>().speed *= -1;
         }
     }
 
