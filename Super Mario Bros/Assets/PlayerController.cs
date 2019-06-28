@@ -20,12 +20,13 @@ public class PlayerController : MonoBehaviour
     public void Respawn()
     {
         transform.position = respawn;
+        Camera.main.transform.position = new Vector3(respawn.x + 5, 0, -10);
     }
 
     void CameraFollow()
     {
         if (Camera.main.transform.position.x < transform.position.x)
-            Camera.main.transform.position = Vector3.Lerp(new Vector3(Camera.main.transform.position.x, 0, 0), transform.position + Vector3.back * 10, 0.5f);
+            Camera.main.transform.position = Vector3.Lerp(new Vector3(Camera.main.transform.position.x, 0, -10), transform.position + Vector3.back * 10, 0.5f);
     }
 
     void OnCollisionEnter(Collision collision)
