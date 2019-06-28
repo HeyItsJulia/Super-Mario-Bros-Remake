@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+        if (collision.transform.GetComponent<Death>())
+        {
+            Respawn();
+        }
     }
     bool OnGround()
     {

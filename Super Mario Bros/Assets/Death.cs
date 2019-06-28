@@ -2,18 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionBlockController : MonoBehaviour
+public class Death : MonoBehaviour
 {
     
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<PlayerController>())
-        {
-            
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +15,10 @@ public class QuestionBlockController : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position, Vector3.one);
     }
 }
