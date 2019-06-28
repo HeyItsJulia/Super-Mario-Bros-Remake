@@ -15,7 +15,7 @@ public class DeathbyMario : MonoBehaviour
         {
             Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
             Rigidbody myRB = GetComponent<Rigidbody>();
-            if (otherRB && myRB && otherRB.velocity.y < myRB.velocity.y)
+            if (otherRB && myRB && otherRB.velocity.y > myRB.velocity.y)
             {
                 Die();
             }
