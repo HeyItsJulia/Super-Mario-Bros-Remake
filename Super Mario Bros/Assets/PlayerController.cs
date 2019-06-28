@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
         {
             newVel.y = jumpspeed; 
         }
+        if (OnGround())
+            newVel *= 0.5f;
         rb.velocity = newVel;
         CameraFollow();
     }
