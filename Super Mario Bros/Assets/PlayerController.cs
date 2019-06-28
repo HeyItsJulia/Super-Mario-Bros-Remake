@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
 
     void CameraFollow()
     {
-        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, transform.position + Vector3.back * 10, 0.5f);
+        if (Camera.main.transform.position.x < transform.position.x)
+            Camera.main.transform.position = Vector3.Lerp(new Vector3(Camera.main.transform.position.x, 0, 0), transform.position + Vector3.back * 10, 0.5f);
     }
 
     void OnCollisionEnter(Collision collision)

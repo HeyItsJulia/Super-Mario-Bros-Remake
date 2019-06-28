@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class QuestionBlockController : MonoBehaviour
 {
-    
+   public enum ItemType
+    {
+        Nothing,
+        Coin,
+        Mushroom,
+        Star
+    }
+    public ItemType item;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerController>())
         {
-            
+            if (item == ItemType.Coin)
+            {
+
+            }
+
+
         }
     }
 
