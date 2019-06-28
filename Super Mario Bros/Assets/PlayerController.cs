@@ -38,6 +38,17 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PlayerStop")
+        {
+            Vector3 v = rb.velocity;
+            v.x = 0;
+            rb.velocity = v;
+        }
+    }
+
     bool OnGround()
     {
         return Physics.Raycast(transform.position, Vector3.down, transform.localScale.y / 2f + 0.1F)
