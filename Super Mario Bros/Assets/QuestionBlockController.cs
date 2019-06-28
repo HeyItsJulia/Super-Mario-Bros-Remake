@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestionBlockController : MonoBehaviour
 {
-    public 
+    
 
     private void OnTriggerEnter(Collider other)
     {
