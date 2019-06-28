@@ -12,14 +12,18 @@ public class QuestionBlockController : MonoBehaviour
         Star
     }
     public ItemType item;
+    Rigidbody PlayerUpSpeed;
+    public GameObject Mushroom;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>())
+        PlayerUpSpeed = GetComponent<Rigidbody>();
+        if (other.GetComponent<PlayerController>() && PlayerUpSpeed.velocity.y > 0)
         {
-            if (item == ItemType.Coin)
+            if (item == ItemType.Mushroom)
             {
-
+                GameObject newMushroom = Instantiate(Mushroom);
+                newMushroom.transform.position += Vector3.up;
             }
 
 
