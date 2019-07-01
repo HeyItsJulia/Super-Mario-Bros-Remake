@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5160826704659755381}
   - component: {fileID: 248510273958757582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MushroomTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 6596655608264479056}
   - component: {fileID: 4672882112775679620}
   - component: {fileID: 6286469293193219306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mushroom
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
