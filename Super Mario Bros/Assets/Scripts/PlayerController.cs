@@ -76,6 +76,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (OnGround())
+            rb.useGravity = false;
+        else
+            rb.useGravity = true;
         Vector3 newVel = rb.velocity;
         if (Input.GetKey(left))
         {
