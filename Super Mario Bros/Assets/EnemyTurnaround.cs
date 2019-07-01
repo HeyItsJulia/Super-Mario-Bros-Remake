@@ -13,6 +13,11 @@ public class EnemyTurnaround : MonoBehaviour
         {
             other.GetComponent<EnemyAI>().speed *= -1;
         }
+
+        if (other.GetComponent<MushroomPhisics>())
+        {
+            other.GetComponent<MushroomPhisics>().speed *= -1;
+        }
     }
 
     private void OnDrawGizmos()

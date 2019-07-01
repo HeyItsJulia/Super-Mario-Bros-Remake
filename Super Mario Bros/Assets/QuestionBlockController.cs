@@ -15,33 +15,26 @@ public class QuestionBlockController : MonoBehaviour
         Star
     }
     public ItemType item;
-    Rigidbody PlayerUpSpeed;
     public GameObject Mushroom;
 
-    void OnTriggerEnter(Collider other)
+    public GameObject HitQBlock;
+
+    void OnCollisionEnter(Collision c)
     {
-        PlayerUpSpeed = GetComponent<Rigidbody>();
-        if (other.GetComponent<PlayerController>() && PlayerUpSpeed.velocity.y > 0)
+        Collider other = c.collider;
+        Debug.Log("Collision!");
+        if (other.GetComponent<PlayerController>() && other.GetComponent<Rigidbody>().velocity.y > 0)
         {
+            Debug.Log("Player is rising!");
             if (item == ItemType.Mushroom)
             {
                 GameObject newMushroom = Instantiate(Mushroom);
-                newMushroom.transform.position += Vector3.up;
+                newMushroom.transform.position = transform.position + Vector3.up;
             }
 
-
+            GameObject HitQuestionBlock = Instantiate(HitQBlock);
+            HitQuestionBlock.transform.position = transform.position;
+            Destroy(gameObject);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
