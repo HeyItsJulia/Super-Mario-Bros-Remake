@@ -19,9 +19,9 @@ public class MushroomPhisics : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerController>())
+        if (other.tag == "Player")
         {
-
+            other.GetComponentInParent<PlayerController>().getPowerUp();
             Destroy(gameObject);
         }
     }

@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum PowerUpState
+    {
+        small,
+        big,
+        fire,
+    }
     public KeyCode left = KeyCode.A;
     public KeyCode right = KeyCode.D;
     public KeyCode jump = KeyCode.W;
@@ -14,18 +20,23 @@ public class PlayerController : MonoBehaviour
     public float jumpspeed = 9;
     Rigidbody rb;
     public Vector3 respawn;
+    PowerUpState powerUp;
+    public GameObject smallMario;
+    public GameObject bigMario;
+    GameObject currentMario;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         respawn = transform.position;
+        getPowerUp(PowerUpState.small);
     }
     public void Respawn()
     {
         transform.position = respawn;
         ResetCam();
     }
-
+    
     public void ResetCam()
     {
         Camera.main.transform.position = new Vector3(transform.position.x + 11, 0, -10);
@@ -56,23 +67,19 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+        
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "PlayerStop")
-        {
-            Vector3 v = rb.velocity;
-            v.x = 0;
-            rb.velocity = v;
-        }
-    }
-
+    
     bool OnGround()
     {
-        return Physics.Raycast(transform.position, Vector3.down, transform.localScale.y / 2f + 0.1F)
-            || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f)
-            || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f);
+        if (powerUp == PowerUpState.small)
+            return Physics.Raycast(transform.position, Vector3.down, transform.localScale.y / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f)
+                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f);
+        else
+            return Physics.Raycast(transform.position, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F);
     }
     void Update()
     {
@@ -98,4 +105,32 @@ public class PlayerController : MonoBehaviour
         rb.velocity = newVel;
         CameraFollow();
     }
+    public void getPowerUp(PowerUpState newState)
+    {
+        powerUp = newState;
+        if (currentMario)
+            Destroy(currentMario);
+        if (powerUp == PowerUpState.small)
+            currentMario = Instantiate(smallMario);
+        else if (powerUp == PowerUpState.big)
+            currentMario = Instantiate(bigMario);
+        currentMario.transform.parent = transform;
+        currentMario.transform.localPosition = Vector3.zero;
+    }
+
+    public void getPowerUp()
+    {
+        if (powerUp == PowerUpState.small)
+            getPowerUp(PowerUpState.big);
+        else if (powerUp == PowerUpState.big)
+            getPowerUp(PowerUpState.fire);
+
+    }
+    public void powerDown()
+    {
+        getPowerUp(PowerUpState.small);
+    }
 }
+
+
+

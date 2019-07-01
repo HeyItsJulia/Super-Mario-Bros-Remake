@@ -23,7 +23,7 @@ public class QuestionBlockController : MonoBehaviour
     {
         Collider other = c.collider;
         Debug.Log("Collision!");
-        if (other.GetComponent<PlayerController>() && other.GetComponent<Rigidbody>().velocity.y > 0)
+        if (other.tag == "Player" && other.GetComponentInParent<Rigidbody>().velocity.y > 0)
         {
             Debug.Log("Player is rising!");
             if (item == ItemType.Mushroom)
