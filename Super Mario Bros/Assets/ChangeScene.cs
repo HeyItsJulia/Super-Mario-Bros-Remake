@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// ChangeScene.cs
+// Created: 6/28/2019
+// Owner: Julia Lundblad
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,9 +13,5 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void Quit()
-    {
-        Debug.Log("I'm Quitting!");
-        Application.Quit();
-    }
+    
 }
