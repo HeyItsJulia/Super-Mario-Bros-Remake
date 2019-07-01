@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// QuestionBlockController.cs
+// 6/28/19
+// Isaac Richards
 public class QuestionBlockController : MonoBehaviour
 {
    public enum ItemType
