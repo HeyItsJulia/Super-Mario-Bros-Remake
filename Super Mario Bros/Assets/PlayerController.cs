@@ -36,7 +36,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.GetComponent<EnemyAI>())
         {
-            Respawn();
+            Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
+            Rigidbody myRB = GetComponent<Rigidbody>();
+            if (otherRB && myRB && otherRB.velocity.y >= myRB.velocity.y)
+            {
+                Respawn();
+            }
         }
         if (collision.transform.GetComponent<Death>())
         {
