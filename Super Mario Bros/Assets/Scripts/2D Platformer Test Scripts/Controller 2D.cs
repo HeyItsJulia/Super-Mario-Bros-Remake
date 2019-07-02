@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof (BoxCollider2D))]
-public class Controller2D : MonoBehaviour
+public class Controller2D : UnityEngine.MonoBehaviour
 {
     BoxCollider2D Collider;
 

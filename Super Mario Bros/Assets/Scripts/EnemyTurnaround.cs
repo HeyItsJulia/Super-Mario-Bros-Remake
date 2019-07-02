@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTurnaround : MonoBehaviour
+public class EnemyTurnaround : UnityEngine.MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

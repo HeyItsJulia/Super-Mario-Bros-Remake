@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockHitDetection : MonoBehaviour
+public class BlockHitDetection : UnityEngine.MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

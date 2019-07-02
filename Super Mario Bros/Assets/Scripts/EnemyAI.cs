@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : UnityEngine.MonoBehaviour
 {
     Rigidbody rb;
     public float speed = 3;

@@ -1,16 +1,22 @@
-﻿using System.Collections;
+﻿// Timer.cs
+// Created: 7/2/2019
+// Owner: Julia Lundblad
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Timer : PlayerController
+public class Timer : MonoBehaviour
 {
-    public int timeLeft = 5;
+    public int startTime = 5;
+    int timeLeft;
     public Text countdownText;
    
     // Use this for initialization
     void Start()
     {
         StartCoroutine("LoseTime");
+        ResetTime();
     }
 
   
@@ -23,8 +29,7 @@ public class Timer : PlayerController
         if (timeLeft <= 0)
         {
             StopCoroutine("LoseTime");
-            
-            Respawn();
+            FindObjectOfType<PlayerController>().Respawn();
         }
     }
 
@@ -37,4 +42,8 @@ public class Timer : PlayerController
         }
     }
 
+    public void ResetTime()
+    {
+        timeLeft = startTime;
+    }
 }

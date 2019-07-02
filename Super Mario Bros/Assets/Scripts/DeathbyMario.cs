@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathbyMario : MonoBehaviour
+public class DeathbyMario : UnityEngine.MonoBehaviour
 {
 
     private void OnCollisionEnter(Collision collision)
