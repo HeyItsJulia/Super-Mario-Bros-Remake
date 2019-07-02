@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4254832534547159480}
   - component: {fileID: 531497133139685783}
   - component: {fileID: 5981285761979451417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Big Mario
   m_TagString: Player
   m_Icon: {fileID: 0}
