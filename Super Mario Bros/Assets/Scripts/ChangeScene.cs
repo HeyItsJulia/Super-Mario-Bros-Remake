@@ -5,12 +5,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class ChangeScene : MonoBehaviour
 {
-    public void NewScene(string sceneName)
+    void Update()
     {
-        SceneManager.LoadScene(sceneName);
+        if (Input.GetMouseButtonDown(0))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
     }
 
 }
