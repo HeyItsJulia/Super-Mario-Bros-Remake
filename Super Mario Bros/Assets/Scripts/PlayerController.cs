@@ -20,10 +20,12 @@ public class PlayerController : MonoBehaviour
     public float jumpspeed = 9;
     Rigidbody rb;
     public Vector3 respawn;
+    bool wasOnGround = false;
     PowerUpState powerUp;
     public GameObject smallMario;
     public GameObject bigMario;
     GameObject currentMario;
+    Vector3 vel;
 
     void Start()
     {
@@ -58,35 +60,55 @@ public class PlayerController : MonoBehaviour
         {
             Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
             Rigidbody myRB = GetComponent<Rigidbody>();
-            if (otherRB && myRB && otherRB.velocity.y >= myRB.velocity.y)
+            if (myRB && vel.y >= 0)
             {
                 Respawn();
             }
+            else
+            {
+                collision.transform.GetComponent<EnemyAI>().Die();
+            }
         }
-        if (collision.transform.GetComponent<Death>())
+        else if (collision.transform.GetComponent<Death>())
         {
             Respawn();
         }
         
     }
-    
-    bool OnGround()
+
+    bool OnGround(out RaycastHit hit)
     {
         if (powerUp == PowerUpState.small)
-            return Physics.Raycast(transform.position, Vector3.down, transform.localScale.y / 2f + 0.1F)
-                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f)
-                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, transform.localScale.y / 2f + 0.1f);
+            return Physics.Raycast(transform.position, Vector3.down, out hit, transform.localScale.y / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, out hit, transform.localScale.y / 2f + 0.1f)
+                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, out hit, transform.localScale.y / 2f + 0.1f);
         else
-            return Physics.Raycast(transform.position, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F)
-                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F)
-                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, (transform.localScale.y * 2) / 2f + 0.1F);
+            return Physics.Raycast(transform.position, Vector3.down, out hit, (transform.localScale.y * 2) / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.left * 0.5f * transform.localScale.x, Vector3.down, out hit, (transform.localScale.y * 2) / 2f + 0.1F)
+                || Physics.Raycast(transform.position + Vector3.right * 0.5f * transform.localScale.x, Vector3.down, out hit, (transform.localScale.y * 2) / 2f + 0.1F);
     }
+    bool OnGround()
+    {
+        RaycastHit hit;
+        return OnGround(out hit);
+    }
+
     void Update()
     {
-        if (OnGround())
+        RaycastHit hit;
+        if (!wasOnGround && (wasOnGround = OnGround(out hit)))
+        {
+            if (powerUp == PowerUpState.small)
+                transform.position += Vector3.down * (hit.distance - transform.localScale.y / 2f);
+            else
+                transform.position += Vector3.down * (hit.distance - transform.localScale.y);
             rb.useGravity = false;
-        else
+        }
+        else if (!OnGround())
+        {
+            wasOnGround = false;
             rb.useGravity = true;
+        }
         Vector3 newVel = rb.velocity;
         if (Input.GetKey(left))
         {
@@ -101,8 +123,8 @@ public class PlayerController : MonoBehaviour
             newVel.y = jumpspeed; 
         }
         if (OnGround())
-            newVel *= 0.5f;
-        rb.velocity = newVel;
+            newVel.x *= 0.5f;
+        vel = rb.velocity = newVel;
         CameraFollow();
     }
     public void getPowerUp(PowerUpState newState)
