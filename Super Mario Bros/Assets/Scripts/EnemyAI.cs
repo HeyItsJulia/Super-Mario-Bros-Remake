@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
 {
     Rigidbody rb;
     public float speed = 3;
+    bool canMove = false;
 
     public void Die()
     {
@@ -24,7 +25,16 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(speed, rb.velocity.y, 0);
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        if (!canMove && sp.x <= Screen.width + 32 && sp.x >= -32)
+        {
+            canMove = true;
+            Debug.Log("In View! " + Mathf.Abs(transform.position.x - Camera.main.transform.position.x) + "<=" + Screen.width / 2f);
+        }
+        if (canMove)
+            rb.velocity = new Vector3(speed, rb.velocity.y, 0);
+        else
+            rb.velocity = Vector3.zero;
     }
 
     void OnDrawGizmos()
