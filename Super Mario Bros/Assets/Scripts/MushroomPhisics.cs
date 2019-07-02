@@ -6,7 +6,7 @@ using UnityEngine;
 // 7/1/19
 // Isaac Richards 
 
-public class MushroomPhisics : MonoBehaviour
+public class MushroomPhisics : UnityEngine.MonoBehaviour
 {
     Rigidbody rb;
     public float speed = 5;
@@ -21,7 +21,7 @@ public class MushroomPhisics : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponentInParent<PlayerController>().getPowerUp();
+            other.GetComponentInParent<MonoBehaviour>().getPowerUp();
             Destroy(gameObject);
         }
     }

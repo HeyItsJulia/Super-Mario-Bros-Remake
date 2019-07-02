@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyAnimation : MonoBehaviour
+public class MyAnimation : UnityEngine.MonoBehaviour
 {
     public Sprite[] sprites;
     int currentSprite = 0;

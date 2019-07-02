@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionPassthrough : MonoBehaviour
+public class CollisionPassthrough : UnityEngine.MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

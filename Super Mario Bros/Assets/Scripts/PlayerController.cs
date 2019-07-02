@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : UnityEngine.MonoBehaviour
 {
     public enum PowerUpState
     {
@@ -50,8 +50,9 @@ public class PlayerController : MonoBehaviour
         transform.position = respawn;
         lives--;
         ResetCam();
+        FindObjectOfType<Timer>().ResetTime();
     }
-    
+
     public void ResetCam()
     {
         Camera.main.transform.position = new Vector3(transform.position.x + 11, 0, -10);
