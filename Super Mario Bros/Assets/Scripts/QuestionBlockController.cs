@@ -28,7 +28,9 @@ public class QuestionBlockController : MonoBehaviour
             }
             if (item == ItemType.Coin)
             {
-                
+            GameObject newCoin = Instantiate(Coin);
+            newCoin.transform.position = transform.position;
+            PlayerController.score += 100;
             }
 
             GameObject HitQuestionBlock = Instantiate(HitQBlock);
