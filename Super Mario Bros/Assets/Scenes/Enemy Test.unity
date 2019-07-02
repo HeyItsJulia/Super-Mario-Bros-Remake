@@ -705,7 +705,7 @@ MonoBehaviour:
   right: 100
   jump: 32
   speed: 6
-  jumpspeed: 19
+  jumpspeed: 8
   respawn: {x: 0, y: 0, z: 0}
   smallMario: {fileID: 4921123351124467137, guid: b3444c16ef5f61a4499c87bcdecbe473,
     type: 3}
@@ -725,7 +725,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!4 &1602427058
 Transform:
@@ -735,7 +735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602427055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: -0.37, z: 0}
+  m_LocalPosition: {x: -4.73, y: -0.37, z: 0}
   m_LocalScale: {x: 0.941, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -851,12 +851,12 @@ PrefabInstance:
     - target: {fileID: 8269690934330997110, guid: 304645ea32734084f82bc426efcecca3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.06
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 8269690934330997110, guid: 304645ea32734084f82bc426efcecca3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.11
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8269690934330997110, guid: 304645ea32734084f82bc426efcecca3,
         type: 3}
@@ -902,31 +902,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269690934330997110, guid: 304645ea32734084f82bc426efcecca3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.7772868
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269690934330997110, guid: 304645ea32734084f82bc426efcecca3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.018525
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269690934330997099, guid: 304645ea32734084f82bc426efcecca3,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269690934330997099, guid: 304645ea32734084f82bc426efcecca3,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.6875
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269690934330997099, guid: 304645ea32734084f82bc426efcecca3,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304645ea32734084f82bc426efcecca3, type: 3}
