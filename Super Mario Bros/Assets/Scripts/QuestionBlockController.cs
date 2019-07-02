@@ -16,7 +16,7 @@ public class QuestionBlockController : MonoBehaviour
     }
     public ItemType item;
     public GameObject Mushroom;
-
+    public GameObject Coin;
     public GameObject HitQBlock;
 
     void SpawnItem()
@@ -25,6 +25,10 @@ public class QuestionBlockController : MonoBehaviour
             {
                 GameObject newMushroom = Instantiate(Mushroom);
                 newMushroom.transform.position = transform.position + Vector3.up;
+            }
+            if (item == ItemType.Coin)
+            {
+                
             }
 
             GameObject HitQuestionBlock = Instantiate(HitQBlock);
