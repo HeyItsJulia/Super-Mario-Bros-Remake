@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,16 +27,28 @@ public class PlayerController : MonoBehaviour
     public GameObject bigMario;
     GameObject currentMario;
     Vector3 vel;
+    public static int lives = -1;
+    public Text livesDisplay;
+    public static int score = 0;
+    public Text scoreDisplay;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         respawn = transform.position;
         getPowerUp(PowerUpState.small);
+        if (lives < 0)
+        {
+            lives = 3;
+            score = 0;
+        }
+         
     }
+
     public void Respawn()
     {
         transform.position = respawn;
+        lives--;
         ResetCam();
     }
     
@@ -67,6 +80,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 collision.transform.GetComponent<EnemyAI>().Die();
+                score += 100;
             }
         }
         else if (collision.transform.GetComponent<Death>())
@@ -126,10 +140,15 @@ public class PlayerController : MonoBehaviour
             newVel.x *= 0.5f;
         vel = rb.velocity = newVel;
         CameraFollow();
+        if (scoreDisplay)
+            scoreDisplay.text = "Score: " + score.ToString();
+        if (livesDisplay)
+            livesDisplay.text = "Lives: " + lives.ToString();
     }
     public void getPowerUp(PowerUpState newState)
     {
         powerUp = newState;
+        score += 1000;
         if (currentMario)
             Destroy(currentMario);
         if (powerUp == PowerUpState.small)
