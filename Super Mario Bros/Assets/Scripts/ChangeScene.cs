@@ -7,12 +7,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
-    void Update()
+    public void GotoMainScene()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene("Level 1-1");
     }
 
 }
