@@ -144,8 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (powerUp == PowerUpState.small)
             getPowerUp(PowerUpState.big);
-        else if (powerUp == PowerUpState.big)
-            getPowerUp(PowerUpState.fire);
+        
 
     }
     public void powerDown()

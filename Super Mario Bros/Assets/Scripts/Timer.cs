@@ -23,7 +23,7 @@ public class Timer : PlayerController
         if (timeLeft <= 0)
         {
             StopCoroutine("LoseTime");
-            countdownText.text = "Times Up!";
+            
             Respawn();
         }
     }
