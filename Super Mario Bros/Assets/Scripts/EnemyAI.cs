@@ -7,9 +7,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
     Rigidbody rb;
     public float speed = 3;
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()

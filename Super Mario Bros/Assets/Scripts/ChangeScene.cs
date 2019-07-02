@@ -5,12 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class ChangeScene : MonoBehaviour
 {
-    public void NewScene(string sceneName)
+    public void GotoMainScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Level 1-1");
     }
 
 }
