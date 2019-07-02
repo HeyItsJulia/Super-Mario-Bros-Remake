@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: 97
   right: 100
-  jump: 32
+  jump: 119
   speed: 6
   jumpspeed: 19
   respawn: {x: 0, y: 0, z: 0}
