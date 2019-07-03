@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
-  nextScene: 
+  nextScene: Splash Scene Logo
 --- !u!1 &2055992329
 GameObject:
   m_ObjectHideFlags: 0
