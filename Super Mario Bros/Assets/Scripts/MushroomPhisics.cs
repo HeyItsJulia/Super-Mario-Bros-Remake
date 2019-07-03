@@ -21,7 +21,7 @@ public class MushroomPhisics : UnityEngine.MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponentInParent<MonoBehaviour>().getPowerUp();
+            other.GetComponentInParent<PlayerController>().getPowerUp();
             Destroy(gameObject);
         }
     }
