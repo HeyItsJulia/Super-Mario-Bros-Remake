@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdownText.text = ("Time Left = " + timeLeft);
+        countdownText.text = ("Time = " + timeLeft);
 
         if (timeLeft <= 0)
         {
