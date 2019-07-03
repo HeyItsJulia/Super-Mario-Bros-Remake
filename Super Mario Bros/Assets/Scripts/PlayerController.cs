@@ -17,6 +17,7 @@ public class PlayerController : UnityEngine.MonoBehaviour
     public KeyCode left = KeyCode.A;
     public KeyCode right = KeyCode.D;
     public KeyCode jump = KeyCode.W;
+    public KeyCode Down = KeyCode.S;
     public float speed = 1;
     public float jumpspeed = 9;
     Rigidbody rb;
