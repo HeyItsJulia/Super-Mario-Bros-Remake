@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
-    public int startTime = 5;
+    public int startTime = 300;
     int timeLeft;
     public Text countdownText;
    
@@ -30,7 +30,9 @@ public class Timer : MonoBehaviour
         {
             StopCoroutine("LoseTime");
             FindObjectOfType<PlayerController>().Respawn();
+            StartCoroutine("LoseTime");
         }
+        
     }
 
     IEnumerator LoseTime()
