@@ -215,7 +215,7 @@ public class PlayerController : UnityEngine.MonoBehaviour
     {
         getPowerUp(PowerUpState.small);
     }
-    
+
 }
 
 
