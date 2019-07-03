@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class FlagController : MonoBehaviour
 {
-    Rigidbody rb;
-    public float delay = 2f;
-    private void OnTriggerEnter(Collider other)
+    
+    void OnTriggerEnter(Collider other)
     { 
         if (other.tag == "Player")
         {
-
-            Vector3 newVel = rb.velocity;
-            newVel.x = 1;
-            delay -= Time.deltaTime;
-            if (delay <= 0)
-            {
-
-            }
+            other.GetComponent<PlayerController>().enabled = false;
+            other.gameObject.AddComponent<PlayerWinCutscene>();
         }
     }
     // Start is called before the first frame update
