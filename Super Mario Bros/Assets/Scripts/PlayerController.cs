@@ -33,6 +33,9 @@ public class PlayerController : UnityEngine.MonoBehaviour
     public Text livesDisplay;
     public static int score = 0;
     public Text scoreDisplay;
+    public static bool fromPipe;
+    public Transform pipeToComeFrom;
+         
 
     void Start()
     {
@@ -44,7 +47,11 @@ public class PlayerController : UnityEngine.MonoBehaviour
             lives = 3;
             score = 0;
         }
-         
+         if (fromPipe && pipeToComeFrom)
+        {
+            transform.position = pipeToComeFrom.position + Vector3.up * 2;
+        }
+        ResetCam();
     }
 
     public void Respawn()
