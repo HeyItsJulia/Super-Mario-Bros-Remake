@@ -14163,7 +14163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55a392ea1ff3e042973f2523292dbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 5
+  startTime: 300
   countdownText: {fileID: 1419957062}
 --- !u!4 &1420722422 stripped
 Transform:
