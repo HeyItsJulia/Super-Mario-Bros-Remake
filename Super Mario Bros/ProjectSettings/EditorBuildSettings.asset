@@ -12,33 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/EnviornmentTest.unity
     guid: e760f0fb8596f264ea04e39ace384377
   - enabled: 1
+    path: Assets/Scenes/Splash Screen DP.unity
+    guid: 4d67fd3456c23ba44a88b51bc7158f17
+  - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: a0750317febe19547b30a09f3c442dc0
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 7a2524e1e66435f47af4aafbdd4a995c
+  - enabled: 1
     path: Assets/Scenes/Level 1-1.unity
     guid: 185ac212b0edf65418d5bc83590a6c4c
   - enabled: 1
     path: Assets/Scenes/1-1 Underground.unity
     guid: 807f00496af40064fb2f857cd439c2a6
   - enabled: 1
-    path: Assets/Scenes/2D Platformer Test.unity
-    guid: 376d4ecd51ea0ea44aa088ca2499d9b4
-  - enabled: 1
-    path: Assets/Scenes/Enemy Test.unity
-    guid: ed166cd02c8a83a45b6b5f35fd0cdaa8
-  - enabled: 1
-    path: Assets/Scenes/Player Developing.unity
-    guid: a7bb38eb3ec7af64bb7b61ee183da8db
-  - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: a33de01f4f4e84e468559297f54ee41a
-  - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
-    guid: a0750317febe19547b30a09f3c442dc0
-  - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 5c657eebb65b66f4bbb30ef3a003bdb5
   - enabled: 1
-    path: Assets/Scenes/Controls.unity
-    guid: 7a2524e1e66435f47af4aafbdd4a995c
-  - enabled: 1
-    path: Assets/Scenes/Title Screen.unity
-    guid: a0750317febe19547b30a09f3c442dc0
+    path: Assets/Scenes/High Scores.unity
+    guid: cf8725aca052bab46a9a897a705cbd11
   m_configObjects: {}
