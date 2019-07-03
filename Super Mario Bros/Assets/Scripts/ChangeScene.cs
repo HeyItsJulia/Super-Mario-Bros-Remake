@@ -12,4 +12,18 @@ public class ChangeScene : UnityEngine.MonoBehaviour
         SceneManager.LoadScene("Level 1-1");
     }
 
+    public void GotoControls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Title Screen");
+    }
 }

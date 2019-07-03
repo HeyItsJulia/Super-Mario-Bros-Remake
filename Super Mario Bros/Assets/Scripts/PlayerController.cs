@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : UnityEngine.MonoBehaviour
 {
@@ -146,6 +147,12 @@ public class PlayerController : UnityEngine.MonoBehaviour
             scoreDisplay.text = "Score: " + score.ToString();
         if (livesDisplay)
             livesDisplay.text = "Lives: " + lives.ToString();
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("Game Over");
+            lives = 3;
+            score = 0;
+        }
     }
     public void getPowerUp(PowerUpState newState)
     {
