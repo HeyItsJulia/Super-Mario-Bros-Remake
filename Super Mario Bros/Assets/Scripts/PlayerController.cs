@@ -55,6 +55,7 @@ public class PlayerController : UnityEngine.MonoBehaviour
          if (fromPipe && pipeToComeFrom)
         {
             transform.position = pipeToComeFrom.position + Vector3.up * 2;
+            fromPipe = false;
         }
         ResetCam();
     }
