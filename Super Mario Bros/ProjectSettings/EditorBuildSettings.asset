@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Splash Screen DP.unity
     guid: 4d67fd3456c23ba44a88b51bc7158f17
   - enabled: 1
+    path: Assets/Scenes/Splash Scene Logo.unity
+    guid: 9d5f171f5730f424e99656aaa63039fc
+  - enabled: 1
     path: Assets/Scenes/Title Screen.unity
     guid: a0750317febe19547b30a09f3c442dc0
   - enabled: 1
