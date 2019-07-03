@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HighScore : MonoBehaviour
 {
     public string filename = "highscores.json";
+    public int maxScores = 4;
     public string fullpath
     {
         get
@@ -50,8 +51,11 @@ public class HighScore : MonoBehaviour
         if (text)
         {
             text.text = "";
-            foreach (Score s in data.scores)
+            for (int i = 0; i < data.scores.Count && i < maxScores; ++i)
+            {
+                Score s = data.scores[i];
                 text.text += s.name + "\t" + s.score + "\n";
+            }
         }
     }
 

@@ -9,6 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : UnityEngine.MonoBehaviour
 {
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
+    
+
     public enum PowerUpState
     {
         small,
@@ -159,8 +164,9 @@ public class PlayerController : UnityEngine.MonoBehaviour
         {
             newVel.y = jumpspeed; 
         }
+
         if (OnGround())
-            newVel.x *= 0.5f;
+            newVel.x *= 0.8f;
         vel = rb.velocity = newVel;
         CameraFollow();
         if (scoreDisplay)
@@ -172,6 +178,13 @@ public class PlayerController : UnityEngine.MonoBehaviour
             SceneManager.LoadScene("Game Over");
             lives = 3;
             score = 0;
+        }
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        } else if (rb.velocity.y > 0 && !Input.GetButton ("Jump"))
+        {
+            rb.velocity += Vector3.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
     public void getPowerUp(PowerUpState newState)
