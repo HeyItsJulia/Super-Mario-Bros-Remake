@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4569695990910158055}
   - component: {fileID: 7713355735231692137}
   - component: {fileID: 3484117776594199843}
-  m_Layer: 0
   m_Layer: 9
   m_Name: Small Mario
   m_TagString: Player
