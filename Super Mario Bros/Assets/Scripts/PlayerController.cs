@@ -105,7 +105,19 @@ public class PlayerController : UnityEngine.MonoBehaviour
             }
             else if (powerUp == PowerUpState.big)
             {
-                getPowerUp(PowerUpState.small);
+                Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
+                Rigidbody myRB = GetComponent<Rigidbody>();
+                if (myRB && vel.y >= 0)
+                {
+                   
+                    getPowerUp(PowerUpState.small);
+
+                }
+                else
+                {
+                    collision.transform.GetComponent<EnemyAI>().Die();
+                    score += 100;
+                }
             }
         }
                 
