@@ -49,10 +49,11 @@ public class PlayerController : UnityEngine.MonoBehaviour
 
     public void Respawn()
     {
-        transform.position = respawn;
         lives--;
         ResetCam();
+        score = 0;
         FindObjectOfType<Timer>().ResetTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ResetCam()
@@ -74,21 +75,33 @@ public class PlayerController : UnityEngine.MonoBehaviour
     {
         if (collision.transform.GetComponent<EnemyAI>())
         {
-            Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
-            Rigidbody myRB = GetComponent<Rigidbody>();
-            if (myRB && vel.y >= 0)
+            if (powerUp == PowerUpState.small)
             {
-                Respawn();
+                Rigidbody otherRB = collision.transform.GetComponent<Rigidbody>();
+                Rigidbody myRB = GetComponent<Rigidbody>();
+                if (myRB && vel.y >= 0)
+                {
+                    Respawn();
+                    getPowerUp(PowerUpState.small);
+                    
+                }
+                else
+                {
+                    collision.transform.GetComponent<EnemyAI>().Die();
+                    score += 100;
+                }
             }
-            else
+            else if (powerUp == PowerUpState.big)
             {
-                collision.transform.GetComponent<EnemyAI>().Die();
-                score += 100;
+                getPowerUp(PowerUpState.small);
             }
         }
+                
         else if (collision.transform.GetComponent<Death>())
         {
             Respawn();
+            getPowerUp(PowerUpState.small);
+            
         }
         
     }
@@ -157,7 +170,7 @@ public class PlayerController : UnityEngine.MonoBehaviour
     public void getPowerUp(PowerUpState newState)
     {
         powerUp = newState;
-        score += 1000;
+        
         if (currentMario)
             Destroy(currentMario);
         if (powerUp == PowerUpState.small)
@@ -171,8 +184,11 @@ public class PlayerController : UnityEngine.MonoBehaviour
     public void getPowerUp()
     {
         if (powerUp == PowerUpState.small)
+        {
+            score += 1000;
             getPowerUp(PowerUpState.big);
-        
+        }
+           
 
     }
     public void powerDown()
