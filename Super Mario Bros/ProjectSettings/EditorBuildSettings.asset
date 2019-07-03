@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EnviornmentTest.unity
     guid: e760f0fb8596f264ea04e39ace384377
   - enabled: 1
@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Enemy Test.unity
     guid: ed166cd02c8a83a45b6b5f35fd0cdaa8
+  - enabled: 1
+    path: Assets/Scenes/High Scores.unity
+    guid: cf8725aca052bab46a9a897a705cbd11
+  - enabled: 1
+    path: Assets/Scenes/Splash Scene Logo.unity
+    guid: 9d5f171f5730f424e99656aaa63039fc
+  - enabled: 1
+    path: Assets/Scenes/Splash Screen DP.unity
+    guid: 4d67fd3456c23ba44a88b51bc7158f17
   - enabled: 1
     path: Assets/Scenes/Player Developing.unity
     guid: a7bb38eb3ec7af64bb7b61ee183da8db

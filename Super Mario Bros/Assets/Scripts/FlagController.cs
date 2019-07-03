@@ -9,8 +9,8 @@ public class FlagController : MonoBehaviour
     { 
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerController>().enabled = false;
-            other.gameObject.AddComponent<PlayerWinCutscene>();
+            other.GetComponentInParent<PlayerController>().enabled = false;
+            other.transform.parent.gameObject.AddComponent<PlayerWinCutscene>();
         }
     }
     // Start is called before the first frame update
