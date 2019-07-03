@@ -15,5 +15,7 @@ public class SpashSceneScript : MonoBehaviour
         delay -= Time.deltaTime;
         if (delay <= 0)
             SceneManager.LoadScene(nextScene);
+
+
     }
 }
