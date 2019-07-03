@@ -60,13 +60,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54553fc4413919e42a61d493d53e11b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
   left: 97
   right: 100
   jump: 119
+  Down: 115
   speed: 6
-  jumpspeed: 9
+  jumpspeed: 13
   respawn: {x: 0, y: 0, z: 0}
   smallMario: {fileID: 4921123351124467137, guid: b3444c16ef5f61a4499c87bcdecbe473,
     type: 3}
   bigMario: {fileID: 8953653055949154481, guid: 0bbac80cc6b919a4d85f721e36473651,
     type: 3}
+  livesDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 0}
+  pipeToComeFrom: {fileID: 0}
