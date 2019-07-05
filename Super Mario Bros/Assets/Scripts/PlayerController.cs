@@ -112,6 +112,10 @@ public class PlayerController : UnityEngine.MonoBehaviour
                 {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
