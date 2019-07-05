@@ -110,6 +110,10 @@ public class PlayerController : UnityEngine.MonoBehaviour
                 Rigidbody myRB = GetComponent<Rigidbody>();
                 if (myRB && vel.y >= 0)
                 {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                     getPowerUp(PowerUpState.small);
 
                 }
