@@ -111,6 +111,10 @@ public class PlayerController : UnityEngine.MonoBehaviour
                 if (myRB && vel.y >= 0)
                 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
